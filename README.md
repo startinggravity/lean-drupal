@@ -1,3 +1,3 @@
-Making your Responsive Site Picture Perfect
+# Building a Lean, Mean Drupal Theme
+Turn your flabby and out-of-shape website into a fit and robust machine!
 
-A presentation on tips to make images on Drupal sites responsive and optimized.
