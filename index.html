@@ -55,7 +55,6 @@
         <!-- About -->
         <section id="about-jim">
             <h2>Jim Smith</h2>
-
             <p><img src="images/picture-jns.jpg" alt="Jim Smith"></p>
             <ul>
                 <li>Oak Ridge, Tenn.</li>
@@ -71,7 +70,7 @@
 
         <!-- Presentation details -->
         <section id="download">
-            <h2>Get the home version for hours of fun!</h2>
+            <h2>Get the home version<br/>for hours and hours of fun!</h2>
 
             <p><a
                     href="http://startinggravity.github.io/lean-drupal/" title="Github">http://startinggravity.github.io/lean-drupal</a>
@@ -185,6 +184,18 @@
             </aside>
         </section>
 
+        <!-- Assumptions -->
+        <section id="assumptions">
+            <h2>Assumptions</h2>
+            <ul>
+                <li class="fragment larger">Every site will have different requirements, different libraries, different needs.</li>
+                <li class="fragment larger">The fastest request you will ever make is the one you don’t make.</li>
+            </ul>
+            <aside class="notes">
+                Before we begin we have to make a couple assumptions.
+            </aside>
+        </section>
+
         <!-- Connections -->
         <section id="connections">
             <h2>Limit to connections by hostname<br/>and total connections</h2>
@@ -192,6 +203,93 @@
             <p>source: <a href="http://www.browserscope.org/?category=network" title="Browserscope.com">Browserscope.com</a></p>
             <aside class="notes">
                 There is a limit to number of concurrent connections by hostname and in total, and the number varies by browser.
+            </aside>
+        </section>
+
+        <!-- Twenty Percent Rule -->
+        <section id="twenty-percent-rule">
+            <h2>20% Rule</h2>
+            <p class="text-large">For a performance change to be noticeable, it must be at least 20% faster than your previous performance.</p>
+            <p>source: <a href="http://apmblog.dynatrace.com/2011/11/15/why-you-have-less-than-a-second-to-deliver-exceptional-performance/" title="apmblog.dynatrace.com">apmblog.dynatrace.com</a></p>
+            <aside class="notes">
+                The 20 percent rule doesn't mean every change you make should be a 20% or more improvement.
+            </aside>
+        </section>
+
+        <!--  Performance Golden Rule -->
+        <section id="golden-rule">
+            <h2>Performance Golden Rule</h2>
+            <p class="text-large">80-90% of the end-user response time<br/>is spent on the frontend.</p>
+            <p class="text-large">Start there.</p>
+            <p>source: <a href="http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/" title="stevesouders.com">Steve Souders Blog</a></p>
+            <aside class="notes">
+                Roughly 80 percent of end-user response time is consumed by the frontend.
+            </aside>
+        </section>
+
+        <!-- Backend vs Frontend 1-->
+        <section id="backend-v-frontend-1">
+            <h2>Backend vs. Frontend</h2>
+            <img src="images/backend-frontend.jpg" alt="Backend vs. Frontend">
+            <p>source: <a href="http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/" title="stevesouders.com">Steve Souders Blog</a></p>
+            <aside class="notes">
+                This is a waterfall taken from Linkedin showing all of the the
+            </aside>
+        </section>
+
+        <!-- Backend vs Frontend 2-->
+        <section id="backend-v-frontend-2">
+            <h2>Backend vs. Frontend</h2>
+            <ul>
+                <li class="fragment larger">Backend: The time it takes the server to send the first byte to the browser.</li>
+                <li class="fragment larger">Frontend: Everything else.</li>
+            </ul>
+            <p>source: <a href="http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/" title="stevesouders.com">Steve Souders Blog</a></p>
+            <aside class="notes">
+                Backend includes the bulk of server processing: database lookups, remote web service calls, stitching together HTML, etc. Frontend processes include executing JavaScript and rendering the page. Also included here is network time for downloading resources.
+            </aside>
+        </section>
+
+        <!-- Nuts and bolts-->
+        <section id="nuts-and-bolts" data-transition="slide" data-background-transition="slide" data-background="images/nut-11935_1280.jpg">
+            <aside class="notes">
+                Finally, now we're going to get down to the nuts and bolts of web page performance.
+            </aside>
+        </section>
+
+        <!-- Drupal stuff 1-->
+        <section id="drupal-stuff-1" class="drupal">
+            <p><img src="images/druplicon.png" alt="Drupal"></p>
+            <ul class="extra-padding">
+                <li class="fragment">Turn on CSS and JavaScript aggregation</li>
+                <li class="fragment">Turn on page and block caching</li>
+                <li class="fragment">Turn on Views caching</li>
+                <li class="fragment">Disable Update module</li>
+                <li class="fragment">Don't use Statistics module</li>
+                <li class="fragment">Don't use PHP Filter module</li>
+            </ul>
+            <p>source: <a href="http://befused.com/drupal/performance-improve" title="befused.com">Blair Wadman Blog</a></p>
+            <aside class="notes">
+                There are basic things you should always do and I suspect most everyone knows these things.
+            </aside>
+        </section>
+
+        <!-- Drupal stuff 2-->
+        <section id="drupal-stuff-2" class="drupal">
+            <p><img src="images/druplicon.png" alt="Drupal"></p>
+            <ul class="extra-padding">
+                <li class="fragment">Install <a href="https://www.drupal.org/project/magic" title="Magic module<">Magic module</a></li>
+                <li class="fragment">Or install <a href="https://www.drupal.org/project/advagg" title="AdvAgg">Advanced CSS/JS Aggregation (AdvAgg) module</li>
+                <li class="fragment">Use <a href="https://www.drupal.org/project/modernizr" title="Modernizr">Modernizr module</a></li>
+                <li class="fragment">Distribute assets with the <a href="https://www.drupal.org/project/CDN" title="CDN module">CDN module</a></li>
+                
+            </ul>
+
+            <aside class="notes">
+                Magic: Moves scripts to footer, utilizes async attribute on CSS/JS, additional config options for CSS.<br/>
+                AdvAgg: Takes what Magic does to the next level, including minification.<br/>
+                Modernizr: Lets you build the smallest Modernizr file possible.<br/>
+                CDN: Allows assests to be distributed to several servers so that requests are delivered from the nearest server.
             </aside>
         </section>
 
