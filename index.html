@@ -44,9 +44,6 @@
                         href="https://www.drupalgovcon.org/drupal-govcon-2015/sessions/building-lean-mean-drupal-theme">DrupalGovCon
                     </a></small>
             </p>
-            <p>
-
-            </p>
             <aside class="notes">
                 Welcome.
             </aside>
@@ -55,11 +52,10 @@
         <!-- About -->
         <section id="about-jim">
             <h2>Jim Smith</h2>
-            <p><img src="images/picture-jns.jpg" alt="Jim Smith"></p>
+            <p><img src="images/jns.jpg" alt="Jim Smith" height="120" width="120"></p>
             <ul>
                 <li>Oak Ridge, Tenn.</li>
-                <li>Front-end Drupal Developer at <a href="http://www.dsfederal.com/" title="DSFederal">DSFederal</a>
-                </li>
+                <li>Front-end Drupal Developer at <a href="http://www.dsfederal.com/" title="DSFederal">DSFederal</a></li>
                 <li>Started using Drupal in 2005</li>
                 <li><a href="https://www.drupal.org/u/jimsmith" title="Jim Smith">Drupal user #16880</a></li>
             </ul>
@@ -71,12 +67,20 @@
         <!-- Presentation details -->
         <section id="download">
             <h2>Get the home version<br/>for hours and hours of fun!</h2>
-
             <p><a
                     href="http://startinggravity.github.io/lean-drupal/" title="Github">http://startinggravity.github.io/lean-drupal</a>
             </p>
             <aside class="notes">
                 View this presentation anytime.
+            </aside>
+        </section>
+
+        <!-- Share notes -->
+        <section id="share-notes">
+            <h2>Share your notes</h2>
+            <p><a href="https://drupalgovcon2015.hackpad.com" title="Hackpad">https://drupalgovcon2015.hackpad.com</a></p>
+            <aside class="notes">
+                A reminder: the organizers of this event ask you to share your session notes on the conference Hackpad site.
             </aside>
         </section>
 
@@ -90,7 +94,7 @@
 
         <!-- Why do we care? -->
         <section id="why-do-we-care">
-            <h2>Why do we care about performance?</h2>
+            <h2>Why do we care<br/>about performance?</h2>
             <ul>
                 <li class="fragment">Fast sites make impatient users happier.</li>
                 <li class="fragment">Happy users view more pages.</li>
@@ -143,6 +147,16 @@
             <p>source: <a href="http://www.websiteoptimization.com/speed/tweak/average-web-page/" title="WebSiteOptimization.com">WebsiteOptimization.com</a> (July 2014)</p>
             <aside class="notes">
                 From the looks of this chart, which shows average page weight in purple and average number of objects in green, pages aren't going to get any smaller on their own.
+            </aside>
+        </section>
+
+        <!-- Just because we can -->
+        <section id="just-because-we-can">
+            <p class="text-large">Just because we think we have a lot of bandwidth doesn't mean we have to use it.</p>
+            <p><a href="https://twitter.com/micahgodbolt/status/623180750142058496/photo/1" title="Micah Godbolt tweet"><img src="/images/irony.jpg" title="Godbolt tweet"/></a></p>
+            <p>source: <a href="https://twitter.com/micahgodbolt/status/623180750142058496/photo/1" title="Micah Godbolt tweet">Micha Godbolt (@michagodbolt)</a> - July 20, 2015</p>
+            <aside class="notes">
+                Just because we think we have a lot of bandwidth doesn't mean we have to use it. This tweet from Micah Godbolt illustrates that very well.
             </aside>
         </section>
 
@@ -257,39 +271,267 @@
             </aside>
         </section>
 
-        <!-- Drupal stuff 1-->
-        <section id="drupal-stuff-1" class="drupal">
-            <p><img src="images/druplicon.png" alt="Drupal"></p>
-            <ul class="extra-padding">
-                <li class="fragment">Turn on CSS and JavaScript aggregation</li>
-                <li class="fragment">Turn on page and block caching</li>
-                <li class="fragment">Turn on Views caching</li>
-                <li class="fragment">Disable Update module</li>
-                <li class="fragment">Don't use Statistics module</li>
-                <li class="fragment">Don't use PHP Filter module</li>
+         <!-- Five ways -->
+        <section id="seven-ways">
+            <h2>7 Ways to Speed Up Your Site</h2>
+            <ul>
+                <ol class="fragment">1. Cache everything you can</ol>
+                <ol class="fragment">2. Clean up Drupal's cruft</ol>
+                <ol class="fragment">3. Clean up your code</ol>
+                <ol class="fragment">4. Concatenate and minify your code</ol>
+                <ol class="fragment">5. Deliver assets efficiently</ol>
+                <ol class="fragment">6. Shard domains</ol>
+                <ol class="fragment">7. Set a performance budget and test against it</ol>
             </ul>
-            <p>source: <a href="http://befused.com/drupal/performance-improve" title="befused.com">Blair Wadman Blog</a></p>
             <aside class="notes">
-                There are basic things you should always do and I suspect most everyone knows these things.
+                We will cover seven ways in which you can speed up your site.
             </aside>
         </section>
 
-        <!-- Drupal stuff 2-->
-        <section id="drupal-stuff-2" class="drupal">
-            <p><img src="images/druplicon.png" alt="Drupal"></p>
-            <ul class="extra-padding">
-                <li class="fragment">Install <a href="https://www.drupal.org/project/magic" title="Magic module<">Magic module</a></li>
-                <li class="fragment">Or install <a href="https://www.drupal.org/project/advagg" title="AdvAgg">Advanced CSS/JS Aggregation (AdvAgg) module</li>
-                <li class="fragment">Use <a href="https://www.drupal.org/project/modernizr" title="Modernizr">Modernizr module</a></li>
-                <li class="fragment">Distribute assets with the <a href="https://www.drupal.org/project/CDN" title="CDN module">CDN module</a></li>
-                
+        <!-- Cache - Drupal -->
+        <section id="cache-drupal" class="drupal">
+            <h2>Cache everything you can</h2>
+            <ul>
+                <li class="fragment">Turn on page and block caching</li>
+                <li class="fragment">Turn on Views caching, including blocks</li>
+                <li class="fragment">Install <a href="https://www.drupal.org/project/views_content_cache" title="Views Content Cache">Views Content Cache module</a></li>
+                <li class="fragment">For smaller sites, install <a href="https://www.drupal.org/project/boost" title="Boost">Boost module</a></li>
             </ul>
-
+            <p><img src="images/druplicon.png" alt="Drupal"></p>
             <aside class="notes">
-                Magic: Moves scripts to footer, utilizes async attribute on CSS/JS, additional config options for CSS.<br/>
+                The first one is so basic you probably always do it, but are you taking advantage of the others?</br/>
+                Views caching is often overlooked, especially with blocks. Normal block caching does not include Views blocks.<br/>
+                Views Content Cache module monitors content in a View and clears the cache when the content changes.<br/>
+                Boost copies Drupal pages as flat HTML files and stores them in a cache directory.
+            </aside>
+        </section>
+
+        <!-- Cache - Not Drupal -->
+        <section id="cache-not-drupal" class="drupal">
+            <h2>Cache everything you can</h2>
+            <ul>
+                <li class="fragment">Larger sites should use <a href="http://memcached.org" title="Memcache">Memcache</a> or <a href="https://www.varnish-cache.org" title="Varnish">Varnish</a> (must be installed on your server)</li>
+            </ul>
+            <aside class="notes">
+                The next level of caching requires components and configuration on your server. They cache pages to memory instead of the file system and are therefore even faster.
+            </aside>
+        </section>
+
+        <!-- Clean up Drupal's cruft -->
+        <section id="drupal-cruft" class="drupal">
+            <h2>Clean up Drupal's cruft</h2>
+            <ul>
+                <li class="fragment">Don't use core's Update module</li>
+                <li class="fragment">Don't use core's Statistics module</li>
+                <li class="fragment">Use <a href="https://www.drupal.org/project/fast_404" title="Fast 404">Fast 404 module</a></li>
+                <li class="fragment">Turn off, and if possible, remove every unnecessary module</li>
+                <li class="fragment">Don't install a module unless there's no way to avoid it</li>
+            </ul>
+            <p><img src="images/druplicon.png" alt="Drupal"></p>
+            <aside class="notes">
+                There's no need to poll Drupal.org on a module's status from your production site. You can do that from a dev site.<br/>
+                Don't use core's Statistics module. Let Google Analyitics or another analytics service provide that information.<br/>
+                Drupal does a full bootstrap for every 404 error, which consumes a lot of resources.<br/>
+                Turning off and removing unnecessary modules may seem obvious when you think about it, but it's easily overlooked.<br/>
+                "There's a module for that" is a apt expression, but just because a module exists does not necessarily mean it needs to be installed.
+            </aside>
+        </section>
+
+        <!-- Clean Code - Drupal -->
+        <section id="clean-code-drupal" class="drupal">
+            <h2>Clean up your code</h2>
+            <ul>
+                <li class="fragment">Follow Drupal's <a href="https://www.drupal.org/node/341707" title="best practices">best practices</a> for themes</li>
+                <li class="fragment">Use a base theme that is inherently clean of unnecessary &lt;divs&gt; and classes</li>
+                <li class="fragment">Use custom theme template files to remove unnecessary stuff</li>
+                <li class="fragment">Use <a href="https://www.drupal.org/project/fences" title="Fences">Fences module</a></li>
+                <li class="fragment">Better yet, create a custom theme without a base theme</li>
+            </ul>
+            <p><img src="images/druplicon.png" alt="Drupal"></p>
+            <aside class="notes">
+                Always follow best practices. Not only are you making your code mode efficient, you are making the work of anyone who touches the code more efficient.<br/>
+                There is a lot of unnecessary stuff in many template files. Some base themes like Zen, Mothership, Framework and Aurora avoid them.<br/>
+                Overriding these with custom files is not difficult.<br/>
+                Fences module allows you to specify an HTML element for each field from the backend UI.<br/>
+                Base themes add some overhead you may not need. If you find yourself overwriting a lot of CSS then maybe you don't need the base theme.
+            </aside>
+        </section>
+
+        <!-- Clean Code - Not Drupal -->
+        <section id="clean-code-not-drupal">
+            <h2>Clean up your code</h2>
+            <ul>
+                <li class="fragment">Use <a href="https://en.bem.info" title="BEM">BEM</a>, <a href="https://smacss.com" title="SMACSS">SMACSS</a> and/or <a href="http://oocss.org" title="OOCSS">OOCSS</a> to organize your CSS</li>
+                <li class="fragment">Understand <a href="http://sixrevisions.com/css/css-specificity/" title="Specificity">specificity</a> in your CSS and avoid its traps</li>
+                <li class="fragment">Understand <a href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/" title="Efficient Selectors">selector efficiency</a></li>
+            </ul>
+            <aside class="notes">
+                BEM = Block, Element, Modfier<br/>
+                SMACSS = Scalable and Modular Architecture for CSS<br/>
+                OOCSS = Object Oriented CSS<br/>
+                Falling into specificity traps means you end up writing more code than necessary
+            </aside>
+        </section>
+
+        <!-- Concatenate code - Drupal -->
+        <section id="concatenate-drupal" class="drupal">
+            <h2>Concatenate and minify your code</h2>
+            <ul>
+                <li class="fragment">Use <a href="https://www.drupal.org/project/advagg" title="AdvAgg">Advanced CSS/JS Aggregation (AdvAgg) module</a></li>
+                <li class="fragment">Make Modernizr more efficient with <a href="https://www.drupal.org/project/modernizr" title="Modernizr">Modernizr module</a></li>
+                <li class="fragment">Use <a href="https://www.drupal.org/project/uglifyjs" title="Uglifyjs module">Uglifyjs module</a></li>
+            </ul>
+            <p><img src="images/druplicon.png" alt="Drupal"></p>
+            <aside class="notes">
                 AdvAgg: Takes what Magic does to the next level, including minification.<br/>
-                Modernizr: Lets you build the smallest Modernizr file possible.<br/>
-                CDN: Allows assests to be distributed to several servers so that requests are delivered from the nearest server.
+                The UglifyJS module provides minified JavaScript using an external service.<br/>
+                Modernizr lets you build the smallest Modernizr file possible.
+            </aside>
+        </section>
+
+        <!-- Concatenate code - Not Drupal -->
+        <section id="concatenate-code-not-drupal">
+            <h2>Concatenate and minify your code</h2>
+            <ul>
+                <li class="fragment">Use Gulp and <a href="https://www.npmjs.com/package/gulp-uglify" title="gulp-uglify">gulp-uglify</a></li>
+                <li class="fragment">Use software or a service like <a href="http://www.imgopt.com" title="Smush-it">Smush-it</a> to compress images</li>
+                <li class="fragment">Use <a href="https://github.com/sindresorhus/gulp-imagemin" title="Gulp-imagemin">Gulp-imagemin</a> to compress images used in your theme during development</li>
+            </ul>
+            <aside class="notes">
+                Gulp-Uglify parses and compresses JavaScript without use of a module or an external service.<br/>
+                Photoshop does not make images as small as possible. For that you need a lossless compression service or software.
+            </aside>
+        </section>
+
+        <!-- Deliver assets efficiently - Drupal -->
+        <section id="deliver-assets-drupal" class="drupal">
+            <h2>Deliver Assets Efficiently</h2>
+            <ul>
+                <li class="fragment">Move scripts to the footer with <a href="https://www.drupal.org/project/magic" title="Magic module<">Magic module</a></li>
+                <li class="fragment">Make images responsive and efficient with <a href="https://www.drupal.org/project/picture" title="Picture module">Picture module</a></li>
+                <li class="fragment">Distribute assets with <a href="https://www.drupal.org/project/CDN" title="CDN module">CDN module</a></li>
+                <li class="fragment">Defer image loading with <a href="https://www.drupal.org/project/lazyloader" title="Image Lazyloader module">Image Lazyloader module</a></li>
+                <li class="fragment">Use the <a href="https://www.drupal.org/project/imageapi_optimize" title="Image API Optimize">Image API Optimize module</a></li>
+                <li class="fragment">Try a <a href="https://www.drupal.org/sandbox/joel/2121797s" title="Pre module">sandbox module</a> to make speculative requests that prefetch and prerender content your visitor is likely to see next.</li>
+            </ul>
+            <p><img src="images/druplicon.png" alt="Drupal"></p>
+            <aside class="notes">
+                Move JavaScript files to the footer with Magic module. (This does some of what AdvAgg does, but not all.)<br/>
+                Picture: Uses picture tag, the best way to deliver images. (Now included in D8.<br/>
+                CDN: Allows assests to be distributed to several servers so that requests are delivered from the nearest server.</br/>
+                Lazyloader: Images aren't loaded until they are near or in the viewport.<br/>
+                Image API Optimize: requires access to the server is install components for compressing images.<br/>
+                Prefetch and prerender content using simple link tags in the head of your markup. Site analytics must be studied to make this approach effective.
+            </aside>
+        </section>
+
+        <!-- Deliver assets efficiently - Not Drupal -->
+        <section id="deliver-assets-not-drupal">
+            <h2>Deliver Assets Efficiently</h2>
+            <ul>
+                <li class="fragment">Add inline CSS and JS that's used "above the fold" </li>
+            </ul>
+            <aside class="notes">
+
+            </aside>
+        </section>
+
+        <!-- Budget and test -->
+        <section id="budget-and-test">
+            <h2>Budget and Test</h2>
+            <ul>
+                <li class="fragment">A performance budget is a goal you set for load times on your site.</li>
+                <li class="fragment">Test representative pages of your site. Do this frequently and consistently.</li>
+                <li class="fragment">Also run tests against competitor or similar sites.</li>
+                <li class="fragment">A budget helps you make decisions on what and how things are displayed.</li>
+            </ul>
+            <aside class="notes">
+                Testing competitive sites helps you look find performance advantages. (Remember the 20% rule!)
+            </aside>
+        </section>
+
+        <!-- Budget choices -->
+        <section id="budget-choices">
+            <h2>How the Performance Budget Affects Development Decisions</h2>
+            <ul>
+                <li class="fragment">You may be forced to optimize existing content.</li>
+                <li class="fragment">Or remove something no longer important.</li>
+                <li class="fragment">Or leave out a feature that breaks the budget.</li>
+            </ul>
+            <aside class="notes">
+                You have three choices to make when considering a new feature.
+            </aside>
+        </section>
+
+        <!-- Types of Budgets -->
+        <section id="budgets">
+            <h2>4 Types of Budgets</h2>
+            <p>We can view metrics in four different ways and measure them accordingly.</p>
+            <ul class="extra-padding">
+                <li class="fragment">Milestone Timings</li>
+                <li class="fragment">SpeedIndex</li>
+                <li class="fragment">Quantity-based metrics</li>
+                <li class="fragment">Rule-based metrics</li>
+            </ul>
+            <p>source: <a href="http://timkadlec.com/2014/11/performance-budget-metrics/" title="Tim Kadlec Blog">Tim Kadlec Blog</a></p>
+            <aside class="notes">
+                Simple to understand, but may not give the whole picture because it's simply a count and does not reflect the impact of each request by their weight.
+            </aside>
+        </section>
+
+        <!-- Milestones -->
+        <section id="milestones">
+            <h2>Milestone Timings Budget</h2>
+            <p>Typically, the time to render a page</p>
+            <ul>
+                <li class="fragment">Measures the whole page, not just what the visitor sees</li>
+                <li class="fragment">Useful if you set your own milestone, such as time to expose a form</li>
+            </ul>
+            <p><img src="images/page-render.jpg" alt="Chrome Dev Tools, page render"/></p>
+            <aside class="notes">
+                Time to render the entire page, which might not be a clear picture of what's going on in the page or how it affects the user.
+            </aside>
+        </section>
+
+        <!-- SpeedIndex -->
+        <section id="speedindex">
+            <h2>SpeedIndex</h2>
+            <p>The average time it takes for visible parts of a page to display, expressed in milliseconds and dependent on size of the viewport.</p>
+            <ul>
+                <li class="fragment">An effective test because it measures what a user sees</li>
+                <li class="fragment">Best measured with <a href="http://webpagetest.org" title="WebPageTest.org">WebPageTest.org</a></li>
+            </ul>
+            <p><img src="images/speed-index.jpg" alt="WebpageTest"/></p>
+            <aside class="notes">
+                Speed index is the average time it takes for visible parts of a page to display, expressed in milliseconds and dependent on size of the viewport.
+            </aside>
+        </section>
+
+        <!-- Quantity-based metrics -->
+        <section id="quantity-based-metrics">
+            <h2>Quantity-based metrics</h2>
+            <p>A simple counting of all requests issued or the total weight of a page.</p>
+            <ul>
+                <li class="fragment">Easy to measure and easy to track during development</li>
+                <li class="fragment">Tells you nothing about user experience</li>
+            </ul>
+            <p><img src="images/yslow-requests.jpg" alt="YSlow"/></p>
+            <aside class="notes">
+                Simple to understand, but may not give the whole picture because it's simply a count and does not reflect the impact of each request by their weight.
+            </aside>
+        </section>
+
+        <!-- Rule-based metrics -->
+        <section id="rule-based-metrics">
+            <h2>Rule-based metrics</h2>
+            <p>More a checklist of optimizations you should be doing.</p>
+            <ul>
+                <li class="fragment">Can be used as a metric in a budget</li>
+                <li class="fragment">Use <a href="https://developers.google.com/speed/pagespeed/insights/" title="Chrome PageSpeed Insights">Chrome PageSpeed Insights</a> or <a href="http://yslow.org/ruleset-matrix/" title="YSlow Ruleset">YSlow Scores</a></li>
+            </ul>
+            <p><img src="images/pagespeed.jpg" alt="Chrome PageSpeed Insights"/></p>
+            <aside class="notes">
+
             </aside>
         </section>
 
