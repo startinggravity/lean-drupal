@@ -194,7 +194,7 @@
         <section id="wait" data-transition="slide" data-background-transition="slide" data-background="images/gorilla-65545_1920.jpg">
             <h3 class="text-background lowered">But wait...</h3>
             <aside class="notes">
-                Wait, there are a few things we have to understand first.
+                Wait, before we get to the answers of that question, there are a few things we have to understand first.
             </aside>
         </section>
 
@@ -212,7 +212,8 @@
 
         <!-- Connections -->
         <section id="connections">
-            <h2>Limit to connections by hostname<br/>and total connections</h2>
+            <h2>Limits to connections</h2>
+            <p>Connectionss per Hostname and Total Connections</p>
             <img src="images/concurrent.jpg" alt="connections">
             <p>source: <a href="http://www.browserscope.org/?category=network" title="Browserscope.com">Browserscope.com</a></p>
             <aside class="notes">
@@ -271,31 +272,37 @@
             </aside>
         </section>
 
-         <!-- Five ways -->
-        <section id="seven-ways">
-            <h2>7 Ways to Speed Up Your Site</h2>
+         <!-- Six ways -->
+        <section id="six-ways">
+            <h2>6 Ways to Speed Up Your Site</h2>
             <ul>
                 <ol class="fragment">1. Cache everything you can</ol>
                 <ol class="fragment">2. Clean up Drupal's cruft</ol>
                 <ol class="fragment">3. Clean up your code</ol>
                 <ol class="fragment">4. Concatenate and minify your code</ol>
                 <ol class="fragment">5. Deliver assets efficiently</ol>
-                <ol class="fragment">6. Shard domains</ol>
-                <ol class="fragment">7. Set a performance budget and test against it</ol>
+                <ol class="fragment">6. Set a performance budget and test against it</ol>
             </ul>
             <aside class="notes">
-                We will cover seven ways in which you can speed up your site.
+                We will cover six ways in which you can speed up your site.
             </aside>
+        </section>
+
+        <!-- Cache -->
+        <section id="cache">
+            <h2>Cache everything you can</h2>
+            <p>"The first rule of optimization and caching is this: never do something time consuming twice if you can hold onto the results and re-use them."</p>
+            <p>source: <a href="https://www.lullabot.com/articles/a-beginners-guide-to-caching-data-in-drupal-7" title="Jeff Eaton">Jeff Eaton (Lullabot Blog)</a></p>
         </section>
 
         <!-- Cache - Drupal -->
         <section id="cache-drupal" class="drupal">
             <h2>Cache everything you can</h2>
             <ul>
-                <li class="fragment">Turn on page and block caching</li>
+                <li class="fragment">Turn on <a href="https://www.drupal.org/node/326504" title="Drupal caching">page and block caching</a></li>
                 <li class="fragment">Turn on Views caching, including blocks</li>
                 <li class="fragment">Install <a href="https://www.drupal.org/project/views_content_cache" title="Views Content Cache">Views Content Cache module</a></li>
-                <li class="fragment">For smaller sites, install <a href="https://www.drupal.org/project/boost" title="Boost">Boost module</a></li>
+                <li class="fragment">For smaller sites, install a caching module like <a href="https://www.drupal.org/project/boost" title="Boost">Boost</a></li>
             </ul>
             <p><img src="images/druplicon.png" alt="Drupal"></p>
             <aside class="notes">
@@ -318,6 +325,13 @@
         </section>
 
         <!-- Clean up Drupal's cruft -->
+        <section id="clean-up-cruft">
+            <h2>Clean up Drupal's cruft</h2>
+            <p>"There are a bazillion reasons why Drupal is slow, but the main one is <em>because you weren't paying attention</em>." </p>
+            <p>source: <a href="http://kegel.com/drupal/slow.html" title="Dan Kegel's Web Hostel">Dan Kegel's Web Hostel</a></p>
+        </section>
+
+        <!-- Clean up Drupal's cruft -->
         <section id="drupal-cruft" class="drupal">
             <h2>Clean up Drupal's cruft</h2>
             <ul>
@@ -335,6 +349,13 @@
                 Turning off and removing unnecessary modules may seem obvious when you think about it, but it's easily overlooked.<br/>
                 "There's a module for that" is a apt expression, but just because a module exists does not necessarily mean it needs to be installed.
             </aside>
+        </section>
+
+        <!-- Clean Code -->
+        <section id="clean-code">
+            <h2>Clean up your code</h2>
+            <p><img src="images/markup.png" title="markup"/></p>
+            <p>source: <a href="http://www.mediacurrent.com/blog/why-good-markup-matters" title="Mario Hernandez">Mario Hernandez (Mediacurent Blog)</a></p>
         </section>
 
         <!-- Clean Code - Drupal -->
@@ -373,16 +394,25 @@
             </aside>
         </section>
 
+        <!-- Contactenate code -->
+        <section id="concatenate">
+            <h2>Concatenate and minify your code</h2>
+            <p>"There is a reason jQuery calls the minified version the production version and the original source the development version."</p>
+            <p>source: <a href="http://engineeredweb.com/blog/why-minify-javascript/" title="Matt Farina">Matt Farina (The Engineered Web)</a></p>
+        </section>
+
         <!-- Concatenate code - Drupal -->
         <section id="concatenate-drupal" class="drupal">
             <h2>Concatenate and minify your code</h2>
             <ul>
+                <li class="fragment">Use core's CSS and JS aggregration</li>
                 <li class="fragment">Use <a href="https://www.drupal.org/project/advagg" title="AdvAgg">Advanced CSS/JS Aggregation (AdvAgg) module</a></li>
                 <li class="fragment">Make Modernizr more efficient with <a href="https://www.drupal.org/project/modernizr" title="Modernizr">Modernizr module</a></li>
                 <li class="fragment">Use <a href="https://www.drupal.org/project/uglifyjs" title="Uglifyjs module">Uglifyjs module</a></li>
             </ul>
             <p><img src="images/druplicon.png" alt="Drupal"></p>
             <aside class="notes">
+                Core aggregation works reasonable well for smaller sites, but is not efficient for larger sites.<br/>
                 AdvAgg: Takes what Magic does to the next level, including minification.<br/>
                 The UglifyJS module provides minified JavaScript using an external service.<br/>
                 Modernizr lets you build the smallest Modernizr file possible.
@@ -430,14 +460,23 @@
             <h2>Deliver Assets Efficiently</h2>
             <ul>
                 <li class="fragment">Add inline CSS and JS that's used "above the fold" </li>
+                <li class="fragment">Use hosted versions of libraries, such as <a href="https://developers.google.com/speed/libraries/">Google Hosted Libraries</a></li>
             </ul>
             <aside class="notes">
 
             </aside>
         </section>
 
-        <!-- Budget and test -->
-        <section id="budget-and-test">
+        <!-- Budget and test 1 -->
+        <section id="budget-and-test-2">
+            <h2>Budget and Test</h2>
+            <p>"When I first heard the concept of a performance budget, I groaned quietly, rolled my eyes, and thought, 'Oh, great. One more technical thing to stand in my way.'”</p>
+            <p>source: <a href="http://cognition.happycog.com/article/designing-with-a-performance-budget" title="Katie Kovalcin">Katie Kovalcin (Happy Cog Blog)</a></p>
+
+        </section>
+
+        <!-- Budget and test 2-->
+        <section id="budget-and-test-2">
             <h2>Budget and Test</h2>
             <ul>
                 <li class="fragment">A performance budget is a goal you set for load times on your site.</li>
@@ -535,6 +574,11 @@
             </aside>
         </section>
 
+        <!-- Conclusion -->
+        <section id="conclusion">
+            <p><img src="images/simpsons.gif" alt="circle dancing"/></p>
+        </section>
+
         <!-- Thank you -->
         <section id="thank-you" data-transition="slide" data-background-transition="slide" data-background="images/thank-you-362164_1920.jpg">
             <aside class="notes">
@@ -564,7 +608,6 @@
                 <li>Twitter: <a href="http://twitter.com/_JimSmith_" title="@_JimSmith_">@_JimSmith_</a></li>
                 <li>IRC: startinggravity</li>
             </ul>
-
         </section>
 
 
