@@ -60,7 +60,7 @@
                 <li><a href="https://www.drupal.org/u/jimsmith" title="Jim Smith">Drupal user #16880</a></li>
             </ul>
             <aside class="notes">
-                [reveal]
+                About me.
             </aside>
         </section>
 
@@ -75,20 +75,11 @@
             </aside>
         </section>
 
-        <!-- Share notes -->
-        <section id="share-notes">
-            <h2>Share your notes</h2>
-            <p><a href="https://drupalgovcon2015.hackpad.com" title="Hackpad">https://drupalgovcon2015.hackpad.com</a></p>
-            <aside class="notes">
-                A reminder: the organizers of this event ask you to share your session notes on the conference Hackpad site.
-            </aside>
-        </section>
-
         <!-- Introduction -->
         <section id="introduction">
             <img src="images/stripes.jpg" alt="John Candy">
             <aside class="notes">
-                What we plan today: Follow best practices, use freely-available resources, and testing methods to create the fastest websites possible.
+                What we plan today...
             </aside>
         </section>
 
@@ -103,7 +94,7 @@
                 <li class="fragment">Clean code is easier to maintain.</li>
             </ul>
             <aside class="notes">
-                Why do we care about performance? After all, isn't everyone using a high-speed connection?
+                Isn't everyone using a high-speed connection?
             </aside>
         </section>
 
@@ -124,7 +115,7 @@
             </ul>
             <p>source: <a href="http://www.websiteoptimization.com/speed/tweak/average-web-page/" title="WebSiteOptimization.com">WebsiteOptimization.com</a> (July 2014)</p>
             <aside class="notes">
-                The average size of a web page is more than 1600K.
+                WebOptimization.com looks at performance in an annual study. The most recent study shows an average size of a web page is more than 1600K.
             </aside>
         </section>
 
@@ -137,7 +128,7 @@
             </ul>
             <p>source: <a href="http://www.websiteoptimization.com/speed/tweak/average-web-page/" title="WebSiteOptimization.com">WebsiteOptimization.com</a> (July 2014)</p>
             <aside class="notes">
-                The number of objects in an average web page is about 112.
+                The number of objects in an average web page is 112.
             </aside>
         </section>
 
@@ -178,7 +169,7 @@
         <section id="slow" data-transition="slide" data-background-transition="slide" data-background="images/snail-189916_1920.jpg">
             <h3 class="text-background raised">Don't be slow.</h3>
             <aside class="notes">
-                Don't be slow.
+                It's obvious we don't want to be slow, but...
             </aside>
         </section>
 
@@ -194,7 +185,7 @@
         <section id="wait" data-transition="slide" data-background-transition="slide" data-background="images/gorilla-65545_1920.jpg">
             <h3 class="text-background lowered">But wait...</h3>
             <aside class="notes">
-                Wait, before we get to the answers of that question, there are a few things we have to understand first.
+                Before we get to the answers of that question, there are a few things we have to understand first.
             </aside>
         </section>
 
@@ -288,6 +279,14 @@
             </aside>
         </section>
 
+        <!-- HTTP/2 -->
+        <section id="obsolete" data-transition="slide" data-background-transition="slide" data-background="images/junk-yard-220055.jpg">
+            <h3 class="text-background lowered">Some of this information will be rendered obsolete by <a href="http://http2.github.io">HTTP/2</a></h3>
+            <aside class="notes">
+                The HTTP/2 protocol is slowly being adopted, so some of the information like concurrent connections will be obsolete.
+            </aside>
+        </section>
+
         <!-- Cache -->
         <section id="cache">
             <h2>Cache everything you can</h2>
@@ -374,7 +373,7 @@
                 There is a lot of unnecessary stuff in many template files. Some base themes like Zen, Mothership, Framework and Aurora avoid them.<br/>
                 Overriding these with custom files is not difficult.<br/>
                 Fences module allows you to specify an HTML element for each field from the backend UI.<br/>
-                Base themes add some overhead you may not need. If you find yourself overwriting a lot of CSS then maybe you don't need the base theme.
+                Base themes add some overhead you may not need. If you find yourself overwriting a lot of code then maybe you don't need the base theme.
             </aside>
         </section>
 
@@ -424,13 +423,23 @@
             <h2>Concatenate and minify your code</h2>
             <ul>
                 <li class="fragment">Use Gulp and <a href="https://www.npmjs.com/package/gulp-uglify" title="gulp-uglify">gulp-uglify</a></li>
+                <li class="fragment">Use <a href="http://seesparkbox.com/foundry/a_bit_about_svg" title="svg">SVG images</a> when you can, instead of JPG or PNG</li>
                 <li class="fragment">Use software or a service like <a href="http://www.imgopt.com" title="Smush-it">Smush-it</a> to compress images</li>
                 <li class="fragment">Use <a href="https://github.com/sindresorhus/gulp-imagemin" title="Gulp-imagemin">Gulp-imagemin</a> to compress images used in your theme during development</li>
             </ul>
             <aside class="notes">
                 Gulp-Uglify parses and compresses JavaScript without use of a module or an external service.<br/>
-                Photoshop does not make images as small as possible. For that you need a lossless compression service or software.
+                SVG images are scalable, so they have the added benefit of being responsive.<br/>
+                Photoshop does not make images as small as possible. For that you need a lossless compression service or software.<br/>
+                Gulp-imagemin handles image compression on the fly during development.
             </aside>
+        </section>
+
+        <!-- Deliver assests efficiently -->
+        <section id="efficiency">
+            <h2>Deliver Assets Efficiently</h2>
+            <p>"There is real empirical evidence that substantiates the fact that speed is more than a feature. It’s a requirement."</p>
+            <p>source: <a href="https://vimeo.com/10510576" title="Fred Wilson">Fred Wilson "10 Golden Principles of Successful Web Apps"</a></p>
         </section>
 
         <!-- Deliver assets efficiently - Drupal -->
@@ -459,11 +468,16 @@
         <section id="deliver-assets-not-drupal">
             <h2>Deliver Assets Efficiently</h2>
             <ul>
+                <li class="fragment">Instead of a module, just <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ" title="prefetch">add prefetch links</a> to your theme</li>
+                <li class="fragment">Try <a href="https://davidstoline.com/cdn-module-without-content-delivery-network" title="domain shardking">domain sharding</a></li>
                 <li class="fragment">Add inline CSS and JS that's used "above the fold" </li>
+                <li class="fragment">Use the <a href="https://www.npmjs.com/package/critical" title="Critical">Critical node module</a> with Gulp to automate inline CSS and JS</li>
                 <li class="fragment">Use hosted versions of libraries, such as <a href="https://developers.google.com/speed/libraries/">Google Hosted Libraries</a></li>
             </ul>
             <aside class="notes">
-
+                Domain sharding splits assets across multiple domains, allowing them to be downloaded in parallel.<br/>
+                Inlining CSS and JS eliminates additional roundtrips needed to render a page.<br/>
+                Using hosted libraries provide stable, reliable, high-speed delivery of those files
             </aside>
         </section>
 
